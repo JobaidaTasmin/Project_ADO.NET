@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ComProductsProject
+{
+    public static class ConnectionHelper
+    {
+        public static string ConString
+        {
+            get
+            {
+                string dbPath = Path.Combine(Path.GetFullPath(@"..\..\"), "ProductDb.mdf");
+                return $@"Data Source=(localdb)\mssqllocaldb;AttachDbFilename={dbPath};Initial Catalog=ProductDb;Trusted_Connection=True";
+            }
+        }
+    }
+}
